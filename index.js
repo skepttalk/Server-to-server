@@ -17,9 +17,14 @@ app.get("/Cpi&Wpi", async (req, res) => {
     //   const res2 = await fetch(url4);
     //   const data2 = await res2.json();
 
-    const rural = data.records.find((name) => name.sector === "Rural");
+    const ruralArr = data.records.filter((name) => name.sector === "Rural");
 
-    const urban = data.records.find((name) => name.sector === "Urban");
+    const urbanArr = data.records.filter((name) => name.sector === "Urban");
+
+    const rural = ruralArr[0];
+
+    const urban = urbanArr[0]
+
 
     const ruralEducation = parseInt(rural.education);
 
